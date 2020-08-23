@@ -39,6 +39,10 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
+THIRD_PARTY_APPS = ["django_countries", "django_seed"]
+# https://github.com/SmileyChris/django-countries
+# https://github.com/Brobin/django-seed
+
 PROJECT_APPS = [
     "core.apps.CoreConfig",
     "users.apps.UsersConfig",
@@ -49,11 +53,7 @@ PROJECT_APPS = [
     "conversations.apps.ConversationsConfig",
 ]
 
-
-THIRD_PARTY_APPS = ["django_countries"]
-# https://github.com/SmileyChris/django-countries
-
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 
 MIDDLEWARE = [
