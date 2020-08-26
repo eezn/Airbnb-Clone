@@ -1,0 +1,20 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+
+{% block page_name %}
+Home
+{% endblock page_name%}
+
+{%block content %}
+
+{% for room in potato %}
+<h4>{{room.name}} / ${{room.price}}</h4>
+{% endfor %}
+
+<h5>Page {{page}} of {{page_count}}</h5>
+
+{% for page in page_range %}
+<a href="?page={{page}}">{{page}}</a>
+{% endfor %}
+
+{% endblock content %}
