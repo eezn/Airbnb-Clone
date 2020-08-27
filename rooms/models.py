@@ -2,10 +2,9 @@ from django.db import models
 from django_countries.fields import CountryField
 from core import models as core_models
 
-# Create your models here.
-
 
 class AbstractItem(core_models.TimeStampedModel):
+
     """ Abstract Item """
 
     name = models.CharField(max_length=80)
@@ -18,6 +17,7 @@ class AbstractItem(core_models.TimeStampedModel):
 
 
 class RoomType(AbstractItem):
+
     """ RoomType Model Definition """
 
     class Meta:
@@ -26,6 +26,7 @@ class RoomType(AbstractItem):
 
 
 class Amenity(AbstractItem):
+
     """ Amenity Model Definition """
 
     class Meta:
@@ -33,6 +34,7 @@ class Amenity(AbstractItem):
 
 
 class Facility(AbstractItem):
+
     """ Facility Model Definition """
 
     class Meta:
@@ -40,6 +42,7 @@ class Facility(AbstractItem):
 
 
 class HouseRule(AbstractItem):
+
     """ HouseRule Model Definition """
 
     class Meta:
@@ -47,6 +50,7 @@ class HouseRule(AbstractItem):
 
 
 class Photo(core_models.TimeStampedModel):
+
     """ Photo Model Definition """
 
     caption = models.CharField(max_length=80)
@@ -58,6 +62,7 @@ class Photo(core_models.TimeStampedModel):
 
 
 class Room(core_models.TimeStampedModel):
+
     """ Room Model Definition """
 
     name = models.CharField(max_length=140)
