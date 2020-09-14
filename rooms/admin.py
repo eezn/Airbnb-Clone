@@ -43,13 +43,13 @@ class RoomAdmin(admin.ModelAdmin):
                 )
             },
         ),
-        ("Times", {"fields": ("check_in", "check_out", "instant_book")}),
-        ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths")}),
+        ("Times", {"fields": ("check_in", "check_out", "instant_book",)},),
+        ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths",)},),
         (
             "More About the Space",
             {
                 "classes": ("collapse",),
-                "fields": ("amenities", "facilities", "house_rules"),
+                "fields": ("amenities", "facilities", "house_rules",),
             },
         ),
         ("Last Details", {"fields": ("host",)}),
@@ -72,10 +72,12 @@ class RoomAdmin(admin.ModelAdmin):
         "total_rating",
     )
 
+    # ordering = ("name", "price",)
+    # ordering = ("price", "name",)
+
     list_filter = (
         "instant_book",
         "host__superhost",
-        "host__gender",
         "room_type",
         "amenities",
         "facilities",
@@ -94,7 +96,7 @@ class RoomAdmin(admin.ModelAdmin):
         "house_rules",
     )
 
-    def count_amenities(self, obj):
+    def count_amenities(self, obj):  # obj : 현재 행(row)
         return obj.amenities.count()
 
     count_amenities.short_description = "Amenity Count"

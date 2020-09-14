@@ -17,12 +17,12 @@ class Conversation(core_models.TimeStampedModel):
         return ", ".join(usernames)
 
     def count_messages(self):
-        return self.messages.count()
+        return self.messages.count()  # related_name="messages" (line 38, 39 ForeignKey)
 
     count_messages.short_description = "Number of Messages"
 
     def count_participants(self):
-        return self.participants.count()
+        return self.participants.count()  # "participants" (line 9, 10)
 
     count_participants.short_description = "Number of Participants"
 
