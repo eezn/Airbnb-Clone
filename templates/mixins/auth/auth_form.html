@@ -9,6 +9,16 @@
 
     {% for field in form %}
         {% include 'mixins/auth/form_input.html' with field=field %}
+
+        <!-- <div class="input w-full {% if field.errors %}has_error{% endif %}">
+            {{field}}
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <span class="text-red-700 font-medium text-sm">{{error}}</span> 
+                {% endfor %}
+            {% endif %}
+        </div>  -->
+        
     {% endfor %}
 
     <button class="btn bg-red-500 text-white">{{cta}}</button>
