@@ -1,5 +1,4 @@
 {
-  "python.pythonPath": "C:\\Users\\pplan\\.virtualenvs\\airbnb-clone-toDf67no\\Scripts\\python.exe",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.enabled": true,
